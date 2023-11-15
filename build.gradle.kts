@@ -3,14 +3,24 @@ plugins {
     application
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+group = "io.github.davidedomini"
+version = "1.0"
+
+sourceSets {
+    main{
+        kotlin {
+            setSrcDirs(listOf("src/main/kotlin"))
+        }
+    }
+}
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
+    implementation("io.github.kotlin-telegram-bot.kotlin-telegram-bot:telegram:6.1.0")
     testImplementation(kotlin("test"))
 }
 
